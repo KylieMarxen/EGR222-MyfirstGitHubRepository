@@ -4,6 +4,7 @@ public class TrainCar {
     public static void main(String[] args){
          DrawingPanel panel = new DrawingPanel(200,100);
          Graphics g = panel.getGraphics();
+         //Train body
          g.fillRect(40,10,100,50);
          //windshield
          g.setColor(Color.CYAN);
