@@ -4,6 +4,20 @@ public class Date {
     int month;
     int day;
 
+    //constructors - initialize the state of created objects
+
+    public Date(int year, int month, int day) {
+        this.year = year;
+        this.month = month;
+        this.day = day;
+    }
+    public Date(Date other){
+        this(other.year, other.month, other.day);
+        year = other.year;
+        month = other.month;
+        day = other.day;
+    }
+
 
     //methods
     public int getDaysInMonth(){
