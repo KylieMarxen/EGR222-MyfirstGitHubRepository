@@ -1,15 +1,18 @@
 public class Date {
     //fields
-    int year;
-    int month;
-    int day;
+    private int year;
+    private int month;
+    private int day;
 
     //constructors - initialize the state of created objects
 
     public Date(int year, int month, int day) {
-        this.year = year;
-        this.month = month;
-        this.day = day;
+        if (month < 1 || month > 12) {
+            throw new IllegalArgumentException("Illegal month: " + month);
+        }
+        setYear(year);
+        setMonth(month);
+        setDay(day);
     }
     public Date(Date other){
         this(other.year, other.month, other.day);
@@ -17,9 +20,34 @@ public class Date {
         month = other.month;
         day = other.day;
     }
+    //methods- behavior of each date object
+
+    public int getDay(){
+        return day;
+    }
+    public int getMonth(){
+        return month;
+    }
+    public int getYear(){
+        return year;
+    }
+    public void setDay(int day){
+        if (day < 1 || day > getDaysInMonth()){
+            throw new IllegalArgumentException("Illegal day: " + day);
+        }
+        this.day = day;
+    }
+    public void setMonth(int month){
+        if (month < 1 || month > 12) {
+            throw new IllegalArgumentException("Illegal month: " + month);
+        }
+        this.month = month;
+    }
+    public void setYear(int year){
+        this.year = year;
+    }
 
 
-    //methods
     public int getDaysInMonth(){
         //runs "in the context" of a particular object
         // 31, 30, 28/29
