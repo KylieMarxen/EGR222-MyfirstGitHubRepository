@@ -25,7 +25,7 @@ public class UseList {
         }
     }
     public static void readFile(Scanner input, List<String> words) {
-        System.out.println(":reading the file");
+        System.out.println("reading the file");
         while(input.hasNext()) {
             String word = input.next();
             words.add(word);
